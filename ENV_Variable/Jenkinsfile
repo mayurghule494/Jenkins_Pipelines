@@ -1,0 +1,40 @@
+
+//***** Environment Variable to be involve here *****
+
+pipeline {
+    agent any
+    environment {
+        dev = 'Nishant'
+        qa = 'Manisha'
+        devops = 'mayur'
+    }
+    stages {
+        stage("Get the Source") {
+            steps {
+                sh 'echo "Getting source code"'
+            }
+
+        }
+
+        stage("Build") {
+            steps {
+                sh 'echo "Building code with maven....."'
+                sh '"Build by $(dev)"'
+            }
+        }
+
+        stage("Test") {
+            steps {
+                sh 'echo "testing code with sonar"'
+                sh 'echo "test by $(qa)"'
+            }
+        }
+
+        stage("Deploy") {
+            steps {
+                sh 'echo "Deploying code to dev"'
+                sh 'echo "deployed by $(devops)"'
+            }
+        }
+    }
+}
