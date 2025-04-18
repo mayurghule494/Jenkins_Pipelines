@@ -3,26 +3,26 @@ pipeline {
     stages {
         stage("Get the Source") {
             steps {
-                sh echo "Getting source code"
+                sh 'echo "Getting source code"'
             }
 
         }
 
         stage("Build") {
             steps {
-                sh echo "Building code"
+                sh 'echo "Building code"'
             }
         }
 
         stage("Test") {
             steps {
-                sh echo "testing code"
+                sh 'echo "testing code"'
             }
         }
 
         stage("Deploy") {
             steps {
-                sh echo "Deploying code to dev"
+                sh 'echo "Deploying code to dev"'
             }
         }
     }
