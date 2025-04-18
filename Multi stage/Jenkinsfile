@@ -1,5 +1,5 @@
 
-//***** Multistage Build *****
+//***** Multistage Stage Pipeline *****
 
 pipeline {
     agent any
