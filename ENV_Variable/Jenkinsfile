@@ -17,21 +17,21 @@ pipeline {
         stage("Build") {
             steps {
                 sh 'echo "Building code with maven....."'
-                sh 'echo "$(dev)"'
+                sh 'echo "$(name)"'
             }
         }
 
         stage("Test") {
             steps {
                 sh 'echo "testing code with sonar"'
-                ssh 'echo "$(dev)"'
+                ssh 'echo "$(name)"'
             }
         }
 
         stage("Deploy") {
             steps {
                 sh 'echo "Deploying code to dev"'
-                sh 'echo "deployed by $(devops)"'
+                sh 'echo "deployed by $(name)"'
             }
         }
     }
