@@ -16,7 +16,7 @@ pipeline {
 
         stage("Test") {
             steps {
-                sh 'echo "testing code"'
+                sh 'echo "testing code with sonar"'
             }
         }
 
