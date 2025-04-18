@@ -19,7 +19,7 @@ pipeline {
         stage("Build") {
             steps {
                 sh 'echo "Building code with maven....."'
-                sh '"Build by $(dev)"'
+                sh '"echo Build by $(dev)"'
             }
         }
 
