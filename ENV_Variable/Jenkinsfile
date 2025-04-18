@@ -4,9 +4,7 @@
 pipeline {
     agent any
     environment {
-        dev = 'Nishant'
-        qa = 'Manisha'
-        devops = 'mayur'
+        name = 'Mayur'
     }
     stages {
         stage("Get the Source") {
@@ -19,14 +17,14 @@ pipeline {
         stage("Build") {
             steps {
                 sh 'echo "Building code with maven....."'
-                sh '"echo Build by $(dev)"'
+                sh 'echo "$(dev)"'
             }
         }
 
         stage("Test") {
             steps {
                 sh 'echo "testing code with sonar"'
-                sh 'echo "test by $(qa)"'
+                ssh 'echo "$(dev)"'
             }
         }
 
